@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/dashboard"><b><i class="fas fa-users-cog"></i>&nbsp;User Management</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" style="font-size: 18px;">
+        <li class="nav-item">
+          <a routerLink="/create" class="text-light btn btn-danger">Create User</a>
+        </li>
+        &nbsp;
+        &nbsp;
+        <li class="nav-item">
+          <a routerLink="/users" class="text-light btn btn-warning">Check Users</a>
+        </li>
+        &nbsp;
+        &nbsp;
+        <li class="nav-item dropdown">
+          <a class="btn btn-success text-light dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="far fa-user"></i>&nbsp;Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- <a class="dropdown-item" routerLink="/myaccount">My Account</a> -->
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

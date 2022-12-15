@@ -1,0 +1,20 @@
+.jumbotron {
+    width:100%;
+     height: 100vh;
+     display:table;
+   }
+   
+   .bg-image {
+     background: url() no-repeat center center;
+      -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+      background-color:#ccc;
+     background-size: cover;
+   }
+   
+   .jumbotron .container {
+     display:table-cell;
+     vertical-align:middle;
+     text-align: center;
+   }

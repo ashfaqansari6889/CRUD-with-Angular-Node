@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading" *ngIf="!getparamid">Register New User</h3>
+                                <h3 class="register-heading" *ngIf="getparamid">Update User</h3>
+                                <div style="margin-left: 250px; margin-top: 40px;" *ngIf="errormsg" class="alert alert-danger w-50 alert-dismissible fade show" role="alert">
+                                    <strong>{{ errormsg }}</strong> 
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                            
+                                  <div style="margin-left: 250px; margin-top: 40px;" *ngIf="successmsg" class="alert alert-success w-50 alert-dismissible fade show" role="alert">
+                                    <strong>{{ successmsg }}</strong> 
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>
+                                <form [formGroup]="userForm" (ngSubmit)="userSubmit()">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="name" placeholder="Full Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number*" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="state"  placeholder="State *" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" formControlName="email" placeholder="Your Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" formControlName="city" placeholder="City *" value="" />
+                                        </div>
+                                        <input type="submit"  *ngIf="!getparamid" (click)="userSubmit" class="btnRegister"  value="Insert User"/>
+                                        <input type="submit"  *ngIf="getparamid" (click)="userUpdate" class="btnRegister"  value="Update User"/>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>

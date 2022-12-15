@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div style="overflow-x:auto;" class="container mt-5">
+
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{ successmsg }}</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">city</th>
+              <th scope="col">State</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = 'let us of readData'>
+              <th scope="row">{{us.id}}</th>
+              <td>{{us.name}}</td>
+              <td>{{us.email}}</td>
+              <td>{{us.mobile}}</td>
+              <td>{{us.city}}</td>
+              <td>{{us.state}}</td>
+              <td><a [routerLink]="['/create',us.id]" class="btn btn-sm btn-primary">Update</a></td>
+              <td><button class="btn btn-sm btn-danger" (click)="deleteID(us.id)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
